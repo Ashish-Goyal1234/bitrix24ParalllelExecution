@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CrossBrowser" parallel="tests" thread-count="2" >
+	<parameter name="browser" value="edge"></parameter>
+
+	<listeners>
+		<listener class-name="com.bitrix.listeners.SuiteListener"></listener>
+		<listener class-name="com.bitrix.listeners.TestListener"></listener>
+	</listeners>
+
+<test name="chromeTest">
+		<parameter name="browservalue" value="chrome"></parameter>
+		<classes>
+			<class name="org.bitrix24.login.LoginTest" />
+			<class name="org.bitrix24.crm.ContactsTest" />
+			<class name="org.bitrix24.logout.LogoutTest" />
+		</classes>
+	</test>
+
+	<test name="firefoxTest">
+		<parameter name="browservalue" value="firefox"></parameter>
+		<classes>
+			<class name="org.bitrix24.login.LoginTest" />
+			<class name="org.bitrix24.crm.ContactsTest" />
+			<class name="org.bitrix24.logout.LogoutTest" />
+		</classes>
+	</test>
+
+	
+
+</suite> <!-- Suite -->
